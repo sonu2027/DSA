@@ -1,15 +1,40 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int n=37;
-    long long int sum1=0, sum2=0;
-    int arr1[]={445, 627, 523 ,466, 709, 417 ,283, 259 ,925, 638, 63 ,625 ,601, 37 ,453, 380, 551 ,469 ,72, 974 ,132, 882, 931 ,934 ,895, 661 ,164, 200, 982, 900 ,997, 960, 774 ,814, 669, 191};
-    int arr2[]={709 ,900 ,469 ,37 ,283 ,417 ,259, 132 ,974, 814 ,551, 466, 982, 627 ,63, 669, 934, 625, 661 ,960 ,601, 380, 523, 200 ,900 ,191, 895 ,774, 72, 997, 638, 931, 445 ,925, 453, 164, 882};
-    for (int i = 0; i < 37*2; i++)
+bool isPerfectSquare(int num)
+{
+    float nums = num;
+    if (nums == 1)
+        return true;
+    int start = 0, end = nums;
+    float mid;
+    bool ans = false;
+    while (start <= end)
     {
-        sum1+=arr1[i];
-        sum2+=arr2[i];
+        mid = start + (end - start) / 2;
+        if (mid == nums / mid)
+        {
+            cout << "mid & num: " << mid << " " << nums << endl;
+            ans = true;
+            break;
+        }
+        else if (mid > nums / mid)
+        {
+            end = mid - 1;
+            cout << "end: " << end << endl;
+        }
+        else
+        {
+            start = mid + 1;
+            cout << "start: " << start << endl;
+        }
     }
-    cout<<"sum1"<<sum1<<"sum2"<<sum2<<endl;
+    return ans;
+}
+int main()
+{
+    int num;
+    cout << "Enter num: ";
+    cin >> num;
+    cout << "Ans: " << isPerfectSquare(num);
     return 0;
 }
