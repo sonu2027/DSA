@@ -1,0 +1,18 @@
+Tree: It is a type of DS that represent a hierarchical relationship between data element called nodes
+
+Binary Tree: It is defined as a tree DS where each node has atmost 2 children
+Binary tree should have 0 or 1 or 2 child
+
+Terminologies of tree
+1. Node
+2. Root 
+3. Parent
+4. child
+5. Edges = total no of node - 1
+6. Leaf
+7. Ancestor
+8. Decendent
+9. Level
+10. height
+11. Sibling
+12. Degree - No of child
